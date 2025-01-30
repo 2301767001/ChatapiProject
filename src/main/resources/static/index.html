@@ -1,0 +1,28 @@
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+    var xhr = new HMLHTTPRequest();
+    xhr.responseType = "json";
+    xhr.onreadystatechange = function() {
+       if(xhr.readyState == HMLHTTPRequest.DONE) {
+          document.getElementsByTagName("p")[0].innerHTML = xhr.response["content]";
+
+    }
+
+  };
+
+    xhr.open("GET", "greetings", true);
+    xhr.send();
+
+ });
+
+</script>
+
+<body>
+
+<h1>HI</h1>
+<p>empty</p>
+
+
+</body>
