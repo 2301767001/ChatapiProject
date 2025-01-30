@@ -1,0 +1,14 @@
+.element {
+    display: flex;
+}
+
+.btn {
+    display: inline-block;
+    border: chartreuse;
+    padding: 12px;
+    border-radius: 4px;
+
+}
+    
+
+

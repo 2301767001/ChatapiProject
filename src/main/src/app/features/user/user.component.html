@@ -1,0 +1,30 @@
+<h1>All users</h1>
+
+<div (click)="processOnCreate()" class="btn">Create user</div>
+
+@for(userElement of userCollection; track userElement) {
+
+  <div class= "element">
+  <div>{{userElement.userName }}</div>
+  <div (click)= "processOnEdit(userElement)" class= "btn">Edit</div>
+  <div (click)="processOnDelete(userElement)" class="btn">Remove</div>
+
+  </div>
+
+}
+
+@if(isEditFormVisible) {
+  <input #userInput 
+   (input)="processOnChangeUserName(userInput.value)"
+   [value]="selectedUser?.userName"
+   type="text">
+  <button (click)="processOnSave()">Save</button>
+
+}
+
+@if(isCreateFormVisible) {
+  <input #saveInput 
+   type="text">
+  <button (click)="processOnCreateUser(saveInput.value)">Save</button>
+
+}
